@@ -1,0 +1,116 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "app@mail.ru",
+      "password": "12345678",
+      "name": "Администратор"
+    },
+    {
+      "email": "manager@gmail.com",
+      "password": "11111111",
+      "name": "Manager",
+      "id": 2
+    },
+    {
+      "email": "belchenkov@yksoft.ru",
+      "password": "12qwasZX",
+      "name": "Иванов Иван",
+      "id": 3
+    },
+    {
+      "email": "123@mail.com",
+      "password": "123123",
+      "name": " Даниил",
+      "id": 4
+    }
+  ],
+  "bill": {
+    "value": 100000,
+    "currency": "RUB"
+  },
+  "categories": [
+    {
+      "name": "Дом",
+      "capacity": 15000,
+      "id": 1
+    },
+    {
+      "name": "Еда",
+      "capacity": 10000,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Машина",
+      "capacity": 7000
+    },
+    {
+      "name": "Мебель",
+      "capacity": 5000,
+      "id": 4
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "type": "income",
+      "amount": 1250,
+      "category": 2,
+      "date": "12.06.2017 19:49:02",
+      "description": "Подарили"
+    },
+    {
+      "id": 2,
+      "type": "outcome",
+      "amount": 1300,
+      "category": 1,
+      "date": "13.06.2017 19:49:02",
+      "description": "Купил книги"
+    },
+    {
+      "type": "income",
+      "amount": 1480,
+      "category": 2,
+      "date": "17.06.2017 14:00:48",
+      "id": 3,
+      "description": "Оплатил баллами"
+    },
+    {
+      "type": "outcome",
+      "amount": 2470,
+      "category": 2,
+      "date": "17.06.2017 14:00:58",
+      "id": 4,
+      "description": "Закупка на неделю"
+    },
+    {
+      "type": "outcome",
+      "amount": 4000,
+      "category": 3,
+      "date": "10.06.2017 14:01:58",
+      "id": 5,
+      "description": "Заправка"
+    }
+  ],
+  "text": [
+    {
+      "name": "Друзья",
+      "value": "Встретиться с друзьями в 18 часов",
+      "date": "2021-12-16T16:26:58.042Z",
+      "id": 2
+    },
+    {
+      "name": "Долг до 25",
+      "value": "Иван занял у меня две тысячи рублей до 25 декабря",
+      "date": "2021-12-22T17:38:17.048Z",
+      "id": 3
+    },
+    {
+      "name": "12313",
+      "value": "dfdfdf",
+      "date": "2021-12-24T14:47:01.045Z",
+      "id": 4
+    }
+  ]
+}
