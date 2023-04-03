@@ -1,0 +1,33 @@
+<form class = "records-form" (ngSubmit)="onSubmit(formdata)" #formdata="ngForm">
+    <div class="alert-{{message.type}}" *ngIf="message.text">
+        <p>{{message.text}}</p>
+    </div>
+
+    <div class="title-block">
+      <h3 class="title">
+        Сделать запись <span class="sparkline bar"></span>
+      </h3>
+    </div>
+
+    <div class="col col-xl-4  col-md-12">
+    <div class="card stats" style="height: 270px;">
+    <label for="name">Заголовок</label><br>
+    <input type="text"  class="records-input form-control underlined" id = "name" name="name" ngModel required #name="ngModel">
+    <div>
+    <span *ngIf="!name.valid && name.touched" class = "valid-message">
+        Поле не должно быть пустым<br>
+    </span>
+    </div>
+    <br><label for="value">Текст</label><br>
+    <input type="text" class="records-input form-control underlined" id = "value" name="value" ngModel required #value="ngModel">
+    <div>
+    <span *ngIf="!value.valid && value.touched" class = "valid-message">
+        Поле не должно быть пустым
+    </span>
+    </div>
+    <br><button class="btn btn-block btn-primary" type="submit" [disabled]="!formdata.valid">
+    Отправить
+    </button>
+        </div>
+        </div>
+</form>

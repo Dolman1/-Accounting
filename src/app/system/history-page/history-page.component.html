@@ -1,0 +1,66 @@
+<div class="note-block" >
+    <div class="alert-{{message.type}}" *ngIf="message.text">
+        <p>{{message.text}}</p>
+        <span class="sparkline bar"></span>
+    </div>
+
+
+
+    <form [formGroup]="updateForm">
+        <nav class="note-ol">
+        <div class="title-block">
+          <h3 class="title">
+            Список заметок <span class="sparkline bar"></span>
+          </h3>
+        </div>
+          <div class="col col-xl-6  col-md-12 ">
+           <div class="card stats" style="height: 312px;">
+            <div class="card-block">
+            <li *ngFor="let tx of noteValue; let i = index; " id={{tx.id}} >
+                {{tx.date | date: "dd.MM.yyyy hh:mm"}} | {{tx.value}}
+                <nav>
+                    <button class="btn btn-primary" (click)="valueInForm(tx.id)">
+                    Изменить
+                    </button>
+                    <button class="btn btn-primary"  (click)="deleteNote(tx.id)">Удалить</button>
+                </nav>
+            </li>
+                </div>
+               </div>
+            </div>
+        </nav>
+
+        <nav class="redact-block">
+
+            <div class="col col-xl-5  col-md-12">
+             <div class="card stats" style="height: 312px;">
+                      <div class="card-header card-header-sm bordered">
+                        <h3 class="title">Редактировать</h3>
+                       <span class="sparkline bar"></span>
+                      </div>
+
+            <label for="name">Имя записи</label>
+            <span class="form-help-text">
+            <input type="text" class="form-control underlined" id="name" formControlName="name"><br>
+            <span *ngIf="updateForm.get('name')!.invalid && updateForm.get('name')!.touched" class="valid-message-v2">
+                Поле не должно быть пустым<br>
+            </span>
+            <span *ngIf="nullObjUpdate" class="valid-message-warning">
+                Заметки с таким заголовком не существует<br>
+            </span>
+            <label for="newVAlue">Значение</label>
+            <input type="text" class="form-control underlined" id="value" formControlName="value"><br>
+            <span *ngIf="updateForm.get('value')!.invalid && updateForm.get('value')!.touched" class="valid-message-v2">
+                Поле не должно быть пустым<br>
+            </span>
+            </span>
+           <div class="form-group">
+            <button class="btn btn-block btn-primary"  (click)="updateNote()">Редактировать</button>
+            </div>
+            </div>
+            </div>
+        </nav>
+    </form>
+</div>
+
+
